@@ -8,7 +8,7 @@ var szovegek = [
   "a kockázatok és mellékhatások",
   "csabi egy dobozfejű titán",
   "Thozo the freaking GOAT",
-  "Aki skypeot használ az nem normális",
+  "Aki skypeot használ az nem normális"
 ];
 
 var rnd = Math.floor(Math.random() * szovegek.length);
@@ -24,9 +24,12 @@ document.getElementById("bemenet").addEventListener("input", () => {
     var idozito = setInterval(() => {
       ido++;
       document.getElementById("ido").innerHTML = ido / 10 + " mp";
+      var cpm = Math.round((szovegek[rnd].length / (ido / 10)) * 100) / 100;
+      var p = Math.floor((cpm/20)*100);
+      if (p>100) p = 100;
+      document.getElementById("progress").style.width = p+"%";
       if (szovegek[rnd] == document.getElementById("bemenet").value) {
         clearInterval(idozito);
-        var cpm = Math.round((szovegek[rnd].length / (ido / 10)) * 100) / 100;
         document.getElementById("cpm").innerHTML = cpm + " karakter / mp";
         document.getElementById("kesz").style.display = "block";
       }
