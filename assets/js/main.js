@@ -6,7 +6,9 @@ var szovegek = [
     "ki mint veti ágyát úgy alussza álmát",
     "minden majom telefonál naponta",
     "a kockázatok és mellékhatások",
-    "csabi egy dobozfejű titán"
+    "csabi egy dobozfejű titán",
+    "Thozo the freaking GOAT",
+    "Aki skypeot használ az nem normális",
 ];
 
 var rnd = Math.floor(Math.random()*szovegek.length);
@@ -14,7 +16,12 @@ var rnd = Math.floor(Math.random()*szovegek.length);
 document.getElementById("szoveg").innerHTML = szovegek[rnd];
 
 var ido = 0;
+var mehet = true;
 
+document.getElementById("bemenet").addEventListener("input", () => {
+if (mehet)
+{
+    mehet = false;
 var idozito = setInterval(() => 
 {
     ido++;
@@ -28,4 +35,6 @@ var idozito = setInterval(() =>
         document.getElementById("kesz").style.display = "block";
     }
 }, 100);
+}
+});
 
