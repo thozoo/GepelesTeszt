@@ -20,3 +20,14 @@
     font-size: 1.8em;
     font-weight: bold;
 }
+
+#ido
+{
+    font-size: 2em;
+}
+
+#szoveg
+{
+    user-select: none;
+    -moz-user-select: none;
+}

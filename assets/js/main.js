@@ -12,3 +12,20 @@ var szovegek = [
 var rnd = Math.floor(Math.random()*szovegek.length);
 
 document.getElementById("szoveg").innerHTML = szovegek[rnd];
+
+var ido = 0;
+
+var idozito = setInterval(() => 
+{
+    ido++;
+    document.getElementById("ido").innerHTML = (ido/10)+" mp";
+    if (szovegek[rnd] == document.getElementById("bemenet").value)
+    {
+        clearInterval(idozito);
+        var cpm = Math.round(szovegek[rnd].length/(ido/10)*100)/100;
+        document.getElementById("cpm").innerHTML = cpm+" karakter / mp";
+
+        document.getElementById("kesz").style.display = "block";
+    }
+}, 100);
+
